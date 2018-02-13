@@ -1,9 +1,6 @@
 import m from 'mithril'
 
-import click from './c/click'
-import greeting from './c/greeting'
+import {list} from './c/all'
 
 m.route.prefix '#'
-m.route document.body, 'hello',
-  hello: greeting
-  click: click
+m.route document.body, 'all', list
