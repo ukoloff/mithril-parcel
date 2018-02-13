@@ -1,0 +1,25 @@
+{
+  "name": "index",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Playground for Mithril &amp; Parcel",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukoloff/mithril-parcel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ukoloff/mithril-parcel/issues"
+  },
+  "homepage": "https://github.com/ukoloff/mithril-parcel#readme",
+  "devDependencies": {
+    "mithril": "^1.1.6",
+    "parcel-bundler": "^1.5.1"
+  }
+}

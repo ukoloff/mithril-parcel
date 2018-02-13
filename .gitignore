@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# Parcel
+/dist
+/.cache
+
+/package-lock.json
