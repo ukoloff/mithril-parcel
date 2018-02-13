@@ -7,6 +7,7 @@ export default
         'Name',
         m 'br'
         m 'input',
+          autofocus: true
           value: @value,
           oninput: ->
              vnode.state.value = @value.trim()
