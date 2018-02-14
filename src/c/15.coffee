@@ -35,7 +35,7 @@ export default
               unless --active
                 clearInterval timer
             Math.round (new Date() - @start) / 1000
-            '/'
+            ' / '
             @count
       m 'tbody',
         for y in [0..3]
