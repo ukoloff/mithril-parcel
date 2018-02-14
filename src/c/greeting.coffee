@@ -4,7 +4,7 @@ export default
   view: (vnode)->
     m '[',
       m 'label',
-        'Name',
+        'Your name',
         m 'br'
         m 'input',
           value: @value,
@@ -12,4 +12,7 @@ export default
             vnode.dom.focus()
           oninput: ->
             vnode.state.value = @value.trim()
-      m 'p', 'Hello, ', @value, '!'
+      m 'p', 'Hello',
+        ', ' if @value
+        @value
+        '!'

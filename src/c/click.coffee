@@ -11,8 +11,8 @@ export default
       m 'button',
         onclick: ->
           vnode.state.count++
-        '+'
+        '++'
       m 'button',
         onclick: ->
           vnode.state.count--
-        '-'
+        '--'
