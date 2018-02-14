@@ -25,15 +25,19 @@ export default
             m 'button',
               disabled: !i
               onclick: move i, -1
-              'up'
+              title: 'Move up'
+              m 'i.fa.fa-arrow-up'
             m 'button',
               disabled: i+1 == cells.length
               onclick: move i, +1
-              'down'
+              title: 'Move down'
+              m 'i.fa.fa-arrow-down'
             m 'button',
               onclick: dup i
-              'dup'
+              title: 'Duplicate'
+              m 'i.fa.fa-copy'
             m 'button',
               onclick: drop i
-              'drop'
+              title: 'Remove'
+              m 'i.fa.fa-remove'
           m cell.c
