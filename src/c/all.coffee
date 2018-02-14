@@ -11,8 +11,10 @@ export default me =
 
 import click from './click'
 import greeting from './greeting'
+import g15 from './15'
 
 export list =
   all: me
   hello: greeting
   click: click
+  fifteen: g15
