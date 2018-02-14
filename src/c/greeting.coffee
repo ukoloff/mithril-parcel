@@ -7,8 +7,9 @@ export default
         'Name',
         m 'br'
         m 'input',
-          autofocus: true
           value: @value,
+          oncreate: (vnode)->
+            vnode.dom.focus()
           oninput: ->
-             vnode.state.value = @value.trim()
+            vnode.state.value = @value.trim()
       m 'p', 'Hello, ', @value, '!'

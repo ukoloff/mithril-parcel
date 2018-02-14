@@ -5,7 +5,7 @@ import m from 'mithril'
 
 shuffle = (arr)->
   i = arr.length
-  while i
+  while i > 0
     x = arr[j = Math.floor Math.random() * i--]
     arr[j] = arr[i]
     arr[i] = x
