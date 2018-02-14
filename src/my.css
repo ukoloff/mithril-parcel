@@ -2,3 +2,8 @@ body {
   padding: 1ex;
   text-align: center;
 }
+
+.x15 tbody button {
+  width: 2em;
+  height: 2em;
+}
