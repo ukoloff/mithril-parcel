@@ -1,14 +1,24 @@
 .fontAwesome
 
-  > span
-    display inline-block
-    margin 0.1ex 0.62ex
-    padding 0 0.31ex
-    border 1px solid navy
+  .all
+    div
+      width 1em
+      display inline-block
+      visibility hidden
+      position absolute
 
-    > .fa
-      margin-right: 0.62ex
+    span
+      display inline-block
+      margin 0.1ex 0.62ex
+      padding 0 0.31ex
+      border 1px solid navy
+      border-radius 0.62ex
+      text-align left
+      white-space nowrap
 
-    &:hover
-      > .fa
-        color: blue
+      i
+        margin-right 0.62ex
+
+      &:hover
+        i
+          color: blue

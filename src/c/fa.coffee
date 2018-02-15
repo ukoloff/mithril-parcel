@@ -15,8 +15,23 @@ names = do ->
 
 export default
   view: (vnode)->
+    state = @
+    state.w ||= 1
+    guid = state.guid ||= /\d{2,}/.exec(Math.random())[0] or +new Date
     m '.fontAwesome',
-      for icon in names
-        m 'span',
-          m "i.fa.fa-#{icon}"
-          icon
+      m ".all.x#{guid}",
+        oncreate: (vnode)->
+          max = Math.max (span.offsetWidth for span in vnode.dom.children)...
+          state.w = max / vnode.dom.children[0].offsetWidth
+          setTimeout m.redraw
+        m '.'
+        for icon in names
+          start = icon.slice 0, 20
+          long = start.length < icon.length
+          m 'span',
+            key: icon
+            title: icon if long
+            m "i.fa.fa-#{icon}"
+            start
+            '...' if long
+      m 'style', ".x#{guid} span{min-width:#{state.w.toFixed 1}em}"
