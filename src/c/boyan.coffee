@@ -3,14 +3,16 @@ List of components
 ###
 import m from 'mithril'
 
-import click from './click'
-import greeting from './greeting'
-import g15 from './15'
+import layout from './layout'
 
 export default
   view: (vnode)->
-    cells = @cells ||= [{c: click}, {c: greeting}, {c: g15}]
+    L = layout()
+    console.log L
+    cells = @cells ||= (c: k for k of L).slice 0, 3
+    console.log 'C', cells
     @key ||= 0
+    used = {}
     move = (i, delta)-> ->
       cells.splice i + delta, 0, cells.splice(i, 1)[0]
     dup = (i)-> ->
@@ -19,6 +21,7 @@ export default
       cells.splice i, 1
     m '.boyan',
       for cell, i in cells
+        used[cell.c] = true
         m '.',
           key: cell.k ||= @key++
           m '.',
@@ -40,4 +43,5 @@ export default
               onclick: drop i
               title: 'Remove'
               m 'i.fa.fa-remove'
-          m cell.c
+          m L[cell.c].$
+      m '.'

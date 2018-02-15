@@ -32,7 +32,9 @@ export default
           setTimeout m.redraw
         m '.'
         for icon in names when !filter or 0 <= icon.indexOf filter
-          start = icon.slice 0, 20
+          start = icon.slice 0, 18
+          if start.length > icon.length - 3
+            start = icon
           long = start.length < icon.length
           m 'span',
             key: icon
