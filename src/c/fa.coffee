@@ -39,5 +39,5 @@ export default
             title: icon if long
             m "i.fa.fa-#{icon}"
             start
-            '...' if long
+            m.trust '&hellip;' if long
       m 'style', ".x#{guid} span{min-width:#{state.w.toFixed 1}em}"
