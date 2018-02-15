@@ -29,7 +29,7 @@ export default
         oncreate: (vnode)->
           max = Math.max (span.offsetWidth for span in vnode.dom.children)...
           state.w = max / vnode.dom.children[0].offsetWidth
-          setTimeout m.redraw
+          Promise.resolve().then m.redraw
         m '.'
         for icon in names when !filter or 0 <= icon.indexOf filter
           start = icon.slice 0, 18
