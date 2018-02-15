@@ -18,14 +18,20 @@ export default
     state = @
     state.w ||= 1
     guid = state.guid ||= /\d{2,}/.exec(Math.random())[0] or +new Date
+    filter = (state.filter || '').toLowerCase()
     m '.fontAwesome',
+      m 'label', 'Filter ',
+        m 'input',
+          value: state.filter
+          oninput: ->
+            state.filter = @value.toLowerCase()
       m ".all.x#{guid}",
         oncreate: (vnode)->
           max = Math.max (span.offsetWidth for span in vnode.dom.children)...
           state.w = max / vnode.dom.children[0].offsetWidth
           setTimeout m.redraw
         m '.'
-        for icon in names
+        for icon in names when !filter or 0 <= icon.indexOf filter
           start = icon.slice 0, 20
           long = start.length < icon.length
           m 'span',
