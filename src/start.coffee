@@ -1,6 +1,6 @@
 import m from 'mithril'
 
-import {list} from './c/all'
+import layout from './c/layout'
 
 m.route.prefix '#'
-m.route document.body, 'all', list
+m.route document.body, 'hello', layout()

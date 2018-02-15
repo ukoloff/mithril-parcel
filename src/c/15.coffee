@@ -5,7 +5,7 @@ import m from 'mithril'
 
 shuffle = (arr)->
   i = arr.length
-  while i
+  while i > 0
     x = arr[j = Math.floor Math.random() * i--]
     arr[j] = arr[i]
     arr[i] = x
@@ -24,37 +24,33 @@ export default
     square = @square
     n = 0
     m 'table.x15',
-      m 'thead',
-        m 'tr',
-          m 'td',
-            colspan: 4
-            oncreate: ->
-              unless active++
-                timer = setInterval m.redraw, 100
-            onremove: ->
-              unless --active
-                clearInterval timer
-            Math.round (new Date() - @start) / 1000
-            '/'
-            @count
+      m 'thead', m 'tr', m 'td',
+        colspan: 4
+        oncreate: ->
+          unless active++
+            timer = setInterval m.redraw, 100 * (1 + Math.random())
+        onremove: ->
+          unless --active
+            clearInterval timer
+        Math.round (new Date() - @start) / 1000
+        ' / '
+        @count
       m 'tbody',
         for y in [0..3]
           m 'tr',
             for x in [0..3]
               m 'td', if cell = square[n++]
-                  m 'button',
-                    onclick: swap @, n-1
-                    cell
-                else
-                  []
-      m 'tfoot',
-        m 'tr',
-          m 'td',
-            colspan: 4
-            m 'button',
-              onclick: =>
-                @oninit()
-              'Shuffle'
+                m 'button',
+                  onclick: swap @, n-1
+                  cell
+              else
+                []
+      m 'tfoot', m 'tr', m 'td',
+        colspan: 4
+        m 'button',
+          onclick: =>
+            @oninit()
+          'Shuffle'
 
 swap = (state, n)->
   ->

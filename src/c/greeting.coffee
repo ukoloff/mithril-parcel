@@ -4,11 +4,15 @@ export default
   view: (vnode)->
     m '[',
       m 'label',
-        'Name',
+        'Your name',
         m 'br'
         m 'input',
-          autofocus: true
           value: @value,
+          oncreate: (vnode)->
+            vnode.dom.focus()
           oninput: ->
-             vnode.state.value = @value.trim()
-      m 'p', 'Hello, ', @value, '!'
+            vnode.state.value = @value.trim()
+      m 'p', 'Hello',
+        ', ' if @value
+        @value
+        '!'

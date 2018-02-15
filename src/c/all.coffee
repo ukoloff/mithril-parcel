@@ -1,20 +1,13 @@
 import m from 'mithril'
 
-export default me =
+import layout from './layout'
+
+export default
   view: (vnode)->
     m 'ul',
-      for k of list
+      for k of layout()
         m '.',
           m 'a',
-            href: "##{k}"
+            oncreate: m.route.link
+            href: k
             k
-
-import click from './click'
-import greeting from './greeting'
-import g15 from './15'
-
-export list =
-  all: me
-  hello: greeting
-  click: click
-  fifteen: g15
