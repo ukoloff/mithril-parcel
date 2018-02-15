@@ -6,7 +6,8 @@ export default me =
       for k of list
         m '.',
           m 'a',
-            href: "##{k}"
+            oncreate: m.route.link
+            href: k
             k
 
 import click from './click'
