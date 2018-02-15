@@ -14,6 +14,7 @@ import click from './click'
 import greeting from './greeting'
 import g15 from './15'
 import boyan from './boyan'
+import fa from './fa'
 
 export list =
   all: me
@@ -21,3 +22,5 @@ export list =
   click: click
   fifteen: g15
   boyan: boyan
+  fa: fa
+
