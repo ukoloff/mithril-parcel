@@ -19,6 +19,11 @@ export default
       cells.splice i+1, 0, c: cells[i].c
     drop = (i)-> ->
       cells.splice i, 1
+    unused = ->
+      k for k of L when not used[k]
+    append = (k)-> ->
+      cells.push c: k
+
     m '.boyan',
       for cell, i in cells
         used[cell.c] = true
@@ -44,4 +49,11 @@ export default
               title: 'Remove'
               m 'i.fa.fa-remove'
           m L[cell.c].$
-      m '.'
+      if (bottom = unused()).length
+        m '.',
+          m '.',
+            for k in bottom
+              m 'button',
+                onclick: append k
+                k
+          'Other components...'
