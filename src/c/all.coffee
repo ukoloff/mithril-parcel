@@ -17,10 +17,10 @@ import boyan from './boyan'
 import fa from './fa'
 
 export list =
-  all: me
   hello: greeting
   click: click
   fifteen: g15
-  boyan: boyan
   fa: fa
+  boyan: boyan
+  all: me
 
