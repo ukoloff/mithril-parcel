@@ -2,12 +2,13 @@ import m from 'mithril'
 
 export default
   view: (vnode)->
-    m '[',
+    m '.text-center',
       m 'label',
         'Your name',
         m 'br'
-        m 'input',
-          value: @value,
+        m 'input.form-control',
+          type: 'text'
+          value: @value
           oncreate: (vnode)->
             vnode.dom.focus()
           oninput: ->

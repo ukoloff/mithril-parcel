@@ -4,10 +4,9 @@ import layout from './layout'
 
 export default
   view: (vnode)->
-    m 'ul',
+    m '.list-group',
       for k of layout()
-        m '.',
-          m 'a',
-            oncreate: m.route.link
-            href: k
-            k
+        m 'a.list-group-item',
+          oncreate: m.route.link
+          href: k
+          k
