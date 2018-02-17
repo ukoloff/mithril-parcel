@@ -31,12 +31,17 @@ wrap = (rec)->
 layout =
   view: (vnode)->
     m '[',
-      m 'nav',
+      m 'nav.navbar.navbar-inverse.navbar-static-top', m '.container-fluid', m 'ul.nav.navbar-nav',
+        m 'a.navbar-brand',
+          href: ''
+          oncreate: m.route.link
+          'Mithril'
         for k of routes()
-          m 'a',
+          m 'li', m 'a',
             oncreate: m.route.link
             href: k
             k
-      vnode.children
+      m '.container-fluid',
+        vnode.children
 
 
