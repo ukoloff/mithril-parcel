@@ -5,14 +5,14 @@ export default
     @count = 0
 
   view: (vnode)->
-    m '.',
+    m '.text-center',
       @count
       m 'br'
-      m 'button',
+      m 'button.btn.btn-success',
         onclick: ->
           vnode.state.count++
-        '++'
-      m 'button',
+        m 'i.fa.fa-plus-circle'
+      m 'button.btn.btn-warning',
         onclick: ->
           vnode.state.count--
-        '--'
+        m 'i.fa.fa-minus-circle'

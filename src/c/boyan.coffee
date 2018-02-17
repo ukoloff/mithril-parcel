@@ -30,21 +30,21 @@ export default
         m '.',
           key: cell.k ||= @key++
           m '.',
-            m 'button',
+            m 'button.btn.btn-xs.btn-success',
               disabled: !i
               onclick: move i, -1
               title: 'Move up'
               m 'i.fa.fa-arrow-up'
-            m 'button',
+            m 'button.btn.btn-xs.btn-success',
               disabled: i+1 == cells.length
               onclick: move i, +1
               title: 'Move down'
               m 'i.fa.fa-arrow-down'
-            m 'button',
+            m 'button.btn.btn-xs.btn-info',
               onclick: dup i
               title: 'Duplicate'
               m 'i.fa.fa-copy'
-            m 'button',
+            m 'button.btn.btn-xs.btn-danger',
               onclick: drop i
               title: 'Remove'
               m 'i.fa.fa-remove'
@@ -53,7 +53,7 @@ export default
         m '.',
           m '.',
             for k in bottom
-              m 'button',
+              m 'button.btn.btn-xs.btn-success',
                 onclick: append k
                 k
           'Other components...'

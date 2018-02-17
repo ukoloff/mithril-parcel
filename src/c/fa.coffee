@@ -20,11 +20,12 @@ export default
     guid = state.guid ||= /\d{2,}/.exec(Math.random())[0] or +new Date
     filter = (state.filter || '').toLowerCase()
     m '.fontAwesome',
-      m 'label', 'Filter ',
-        m 'input',
-          value: state.filter
-          oninput: ->
-            state.filter = @value.toLowerCase()
+      m 'input.form-control',
+        placeholder: 'Filter'
+        type: 'search'
+        value: state.filter
+        oninput: ->
+          state.filter = @value.toLowerCase()
       m ".all.x#{guid}",
         oncreate: (vnode)->
           max = Math.max (span.offsetWidth for span in vnode.dom.children)...
