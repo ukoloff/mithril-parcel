@@ -6,8 +6,10 @@ export default
 
   view: (vnode)->
     m '.text-center',
-      @count
-      m 'br'
+      m 'span.label',
+        class: "label-#{if @count then if @count > 0 then "info" else "danger" else "default"}"
+        @count
+      m 'p'
       m 'button.btn.btn-success',
         onclick: ->
           vnode.state.count++
