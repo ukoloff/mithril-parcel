@@ -11,11 +11,11 @@ module.exports =
       m "span.label.label-#{className @count}", @count
       m \p
       m \button.btn.btn-success,
-        onclick: ->
+        onclick: !->
           vnode.state.count++
         m \i.fa.fa-plus-circle
       m \button.btn.btn-warning,
-        onclick: ->
+        onclick: !->
           vnode.state.count--
         m \i.fa.fa-minus-circle
 
