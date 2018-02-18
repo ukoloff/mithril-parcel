@@ -5,8 +5,8 @@
   "description": "Playground for Mithril & Parcel",
   "main": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build --public-url ."
+    "start": "parcel src",
+    "build": "parcel build src --public-url ."
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "mithril": "^1.1.6",
     "parcel-bundler": "^1.6.0",
+    "parcel-plugin-livescript": "file:lsc",
     "stylus": "^0.54.5"
   }
 }
