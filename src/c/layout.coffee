@@ -45,6 +45,3 @@ layout =
             k
       m '.container-fluid',
         vnode.children
-
-require './test'
-
