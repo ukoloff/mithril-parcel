@@ -1,5 +1,4 @@
-module.exports = function() {
-
+module.exports = function(bundler) {
+  bundler.addAssetType('ls', require.resolve('./lsc.js'));
 }
 
-require('fs').writeFile(__dirname + '/log', new Date, function(){})
