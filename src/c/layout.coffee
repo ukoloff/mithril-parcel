@@ -9,7 +9,8 @@ import all from './all'
 
 memoize = 0
 
-export default routes = ->
+module.exports =
+routes = ->
   memoize ||= wrap
     hello: greeting
     click: click
