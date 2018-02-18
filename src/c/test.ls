@@ -1,2 +1,4 @@
 console.log 'Hello, world!'
-a=3
+n = 10
+for i to n
+  console.log "i = #{i}..."
