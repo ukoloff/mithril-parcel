@@ -5,12 +5,14 @@ import m from 'mithril'
 
 import layout from './layout'
 
+panels = 'info success warning'.split ' '
+
 export default
+  icon: 'wrench'
   view: (vnode)->
+    level = vnode.attrs.boyan?.level || 0
     L = layout()
-    console.log L
-    cells = @cells ||= (c: k for k of L).slice 0, 3
-    console.log 'C', cells
+    cells = @cells ||= (c: k for k of L).slice 0, Math.max 0, 3 - level
     @key ||= 0
     used = {}
     move = (i, delta)-> ->
@@ -27,33 +29,37 @@ export default
     m '.boyan',
       for cell, i in cells
         used[cell.c] = true
-        m '.',
+        m ".panel.panel-#{panels[level % panels.length]}",
           key: cell.k ||= @key++
-          m '.',
-            m 'button.btn.btn-xs.btn-success',
+          m '.panel-heading',
+            m 'button.btn.btn-sm.btn-success',
               disabled: !i
               onclick: move i, -1
               title: 'Move up'
               m 'i.fa.fa-arrow-up'
-            m 'button.btn.btn-xs.btn-success',
+            m 'button.btn.btn-sm.btn-success',
               disabled: i+1 == cells.length
               onclick: move i, +1
               title: 'Move down'
               m 'i.fa.fa-arrow-down'
-            m 'button.btn.btn-xs.btn-info',
+            m 'button.btn.btn-sm.btn-info',
               onclick: dup i
               title: 'Duplicate'
               m 'i.fa.fa-copy'
-            m 'button.btn.btn-xs.btn-danger',
+            m 'button.btn.btn-sm.btn-danger',
               onclick: drop i
               title: 'Remove'
               m 'i.fa.fa-remove'
-          m L[cell.c].$
+          m '.panel-body',
+            m L[cell.c].$,
+              boyan: level: level + 1
       if (bottom = unused()).length
-        m '.',
-          m '.',
+        m '.panel.panel-danger',
+          m '.panel-heading',
             for k in bottom
-              m 'button.btn.btn-xs.btn-success',
+              m 'button.btn.btn-sm.btn-success',
                 onclick: append k
+                m "i.fa.fa-#{L[k].$.icon}"
+                ' '
                 k
-          'Other components...'
+          m '.panel-body', 'Other components...'

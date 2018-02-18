@@ -1,6 +1,8 @@
 import m from 'mithril'
 
 export default
+  icon: 'sliders'
+
   oninit: ->
     @count = 0
 

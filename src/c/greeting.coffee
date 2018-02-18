@@ -1,6 +1,7 @@
 import m from 'mithril'
 
 export default
+  icon: 'smile-o'
   view: (vnode)->
     m '.text-center',
       m 'label',

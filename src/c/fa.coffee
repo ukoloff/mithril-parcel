@@ -14,13 +14,14 @@ names = do ->
   result.sort()
 
 export default
+  icon: 'font-awesome'
   view: (vnode)->
     state = @
     state.w ||= 1
     guid = state.guid ||= /\d{2,}/.exec(Math.random())[0] or +new Date
     filter = (state.filter || '').toLowerCase()
     m '.fontAwesome',
-      m 'input.form-control',
+      m 'label', m 'input.form-control',
         placeholder: 'Filter'
         type: 'search'
         value: state.filter

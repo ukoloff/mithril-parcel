@@ -36,10 +36,12 @@ layout =
           href: ''
           oncreate: m.route.link
           'Mithril'
-        for k of routes()
+        for k, v of routes()
           m 'li', m 'a',
             oncreate: m.route.link
             href: k
+            m "i.fa.fa-#{v.$.icon}"
+            ' '
             k
       m '.container-fluid',
         vnode.children
