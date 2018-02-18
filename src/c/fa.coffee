@@ -14,6 +14,7 @@ names = do ->
   result.sort()
 
 export default
+  icon: 'font-awesome'
   view: (vnode)->
     state = @
     state.w ||= 1

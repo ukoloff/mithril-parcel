@@ -14,6 +14,8 @@ shuffle = (arr)->
 active = timer = 0
 
 export default
+  icon: 'gamepad'
+
   oninit: ->
     @start = new Date
     @count = 0
