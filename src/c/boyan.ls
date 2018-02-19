@@ -9,7 +9,7 @@ module.exports =
   icon: \wrench
 
   view: (vnode)->
-    level = vnode.attrs.boyan?.level || 0
+    level = vnode.attrs.boyan-level || 0
     L = do require '.'
     cells = @cells ||= [c: k for k of L]slice 0 Math.max 0 3 - level
     @key ||= 0
@@ -51,7 +51,7 @@ module.exports =
               m \i.fa.fa-remove
           m \.panel-body,
             m L[cell.c].$,
-              boyan: level: level + 1
+              boyan-level: level + 1
       if (bottom = unused()).length
         m \.panel.panel-danger,
           m \.panel-heading,
