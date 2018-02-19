@@ -10,7 +10,7 @@ module.exports =
 
   view: (vnode)->
     level = vnode.attrs.boyan-level || 0
-    L = do require '.'
+    L = require '.'
     cells = @cells ||= [c: k for k of L]slice 0 Math.max 0 3 - level
     @key ||= 0
     used = {}
