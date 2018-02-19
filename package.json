@@ -2,11 +2,11 @@
   "name": "index",
   "private": true,
   "version": "1.0.0",
-  "description": "Playground for Mithril &amp; Parcel",
+  "description": "Playground for Mithril & Parcel",
   "main": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build --public-url ."
+    "start": "parcel src",
+    "build": "parcel build src --public-url ."
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,10 @@
   "homepage": "https://github.com/ukoloff/mithril-parcel",
   "devDependencies": {
     "bootswatch": "^3.3.7",
-    "coffeescript": "^2.2.1",
     "font-awesome": "^4.7.0",
     "mithril": "^1.1.6",
     "parcel-bundler": "^1.6.0",
+    "parcel-plugin-livescript": "^0.9.0",
     "stylus": "^0.54.5"
   }
 }
