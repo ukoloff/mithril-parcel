@@ -9,7 +9,7 @@ export default
   icon: 'wrench'
   view: (vnode)->
     level = vnode.attrs.boyan?.level || 0
-    L = do require './layout'
+    L = do require '.'
     cells = @cells ||= (c: k for k of L).slice 0, Math.max 0, 3 - level
     @key ||= 0
     used = {}
