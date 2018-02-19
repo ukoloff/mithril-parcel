@@ -1,5 +1,5 @@
 # mithril-parcel
-Playground for Mithril &amp; Parcel
+Playground for Mithril, Parcel & LiveScript
 
 See https://ukoloff.gitlab.io/mithril
 
@@ -8,3 +8,4 @@ See https://ukoloff.gitlab.io/mithril
 [babel]: https://babeljs.io/
 [coffee]: http://coffeescript.org/
 [postcss]: http://postcss.org/
+[livescript]: http://livescript.net/
