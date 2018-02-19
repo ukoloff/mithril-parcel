@@ -3,15 +3,13 @@ List of components
 ###
 import m from 'mithril'
 
-import layout from './layout'
-
 panels = 'info success warning'.split ' '
 
 export default
   icon: 'wrench'
   view: (vnode)->
     level = vnode.attrs.boyan?.level || 0
-    L = layout()
+    L = do require './layout'
     cells = @cells ||= (c: k for k of L).slice 0, Math.max 0, 3 - level
     @key ||= 0
     used = {}
