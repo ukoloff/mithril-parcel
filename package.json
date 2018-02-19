@@ -21,7 +21,6 @@
   "homepage": "https://github.com/ukoloff/mithril-parcel",
   "devDependencies": {
     "bootswatch": "^3.3.7",
-    "coffeescript": "^2.2.1",
     "font-awesome": "^4.7.0",
     "mithril": "^1.1.6",
     "parcel-bundler": "^1.6.0",

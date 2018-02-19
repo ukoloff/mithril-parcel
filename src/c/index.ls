@@ -12,7 +12,7 @@ function routes
     hello:    require \./greeting
     click:    require \./click
     fifteen:  require \./15.ls
-    fa:       require \./fa
+    fa:       require \./fa.ls
     boyan:    require \./boyan.ls
     all:      require \./all
 
