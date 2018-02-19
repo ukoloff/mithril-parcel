@@ -1,4 +1,7 @@
 # mithril-parcel
+
+[![pipeline status](https://gitlab.com/ukoloff/mithril/badges/master/pipeline.svg)](https://gitlab.com/ukoloff/mithril/commits/master)
+
 Playground for Mithril, Parcel & LiveScript
 
 See https://ukoloff.gitlab.io/mithril
