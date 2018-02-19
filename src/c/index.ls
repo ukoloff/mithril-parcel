@@ -21,7 +21,7 @@ for let k, v of routes
 
 layout =
   view: (vnode)->
-    m \[,
+    [
       m \nav.navbar.navbar-inverse.navbar-static-top, m \.container-fluid, m \ul.nav.navbar-nav,
         m \a.navbar-brand,
           href: ''
@@ -36,3 +36,4 @@ layout =
             k
       m \.container-fluid,
         vnode.children
+    ]
