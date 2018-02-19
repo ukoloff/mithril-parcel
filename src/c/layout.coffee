@@ -2,7 +2,7 @@ import m from 'mithril'
 
 import click from './click'
 import greeting from './greeting'
-import g15 from './15'
+import g15 from './15.ls'
 import boyan from './boyan'
 import fa from './fa'
 import all from './all'
