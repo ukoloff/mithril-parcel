@@ -1,11 +1,12 @@
-import m from 'mithril'
+m = require \mithril
 
-export default
-  icon: 'list'
+module.exports =
+  icon: \list
+
   view: (vnode)->
-    m '.list-group',
+    m \.list-group,
       for k, v of do require './layout'
-        m 'a.list-group-item',
+        m \a.list-group-item,
           oncreate: m.route.link
           href: k
           m "i.fa.fa-#{v.$.icon}"
