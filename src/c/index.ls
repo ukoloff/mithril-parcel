@@ -13,7 +13,7 @@ function routes
     click:    require \./click
     fifteen:  require \./15.ls
     fa:       require \./fa
-    boyan:    require \./boyan
+    boyan:    require \./boyan.ls
     all:      require \./all
 
 function wrap

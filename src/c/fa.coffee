@@ -13,7 +13,7 @@ names = do ->
           result.push match[1]
   result.sort()
 
-export default
+module.exports=
   icon: 'font-awesome'
   view: (vnode)->
     state = @
