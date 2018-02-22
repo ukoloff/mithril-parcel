@@ -29,7 +29,7 @@ module.exports =
       for cell, i in cells
         used[cell.c] = true
         m ".panel.panel-#{panels[level % panels.length]}",
-          key: cell.k ||= @key++
+          key: cell.k ||= ++@key
           m \.panel-heading,
             m \button.btn.btn-sm.btn-success,
               disabled: !i
@@ -60,6 +60,9 @@ module.exports =
               m \button.btn.btn-sm.btn-success,
                 onclick: append k
                 m "i.fa.fa-#{L[k].$.icon}"
+                ' '
+                k
+          m \.panel-body, 'Other components...'
                 ' '
                 k
           m \.panel-body, 'Other components...'
