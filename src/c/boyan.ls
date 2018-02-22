@@ -54,6 +54,7 @@ module.exports =
               boyan-level: level + 1
       if (bottom = unused()).length
         m \.panel.panel-danger,
+          key: '.'
           m \.panel-heading,
             for k in bottom
               m \button.btn.btn-sm.btn-success,
